@@ -1,0 +1,153 @@
+<html>
+<p>
+....1.1...
+Input: 1 3 6 10
+       2 5 9 13
+       4 8 12 15
+       7 11 14 16
+Output: 1
+        2 3
+        4 5 6
+        7 8 9 10
+        11 12 13
+        14 15
+        16
+for(int i=0;i<2*N-1;i++){
+         int z=(i<N)?0:(i-N+1);
+         for(int j=z;j<=i-z;j++){
+             a[i-j][j];
+         }
+     }
+
+....1.2.....
+Input: 1 3 6 10
+       2 5 9 13
+       4 8 12 15
+       7 11 14 16
+Output: 1
+        3 2
+        6 5 4
+        10 9 8 7
+        13 12 11
+        15 14 
+        16
+for(int i=0;i<2*N-1;i++){
+         int z=(i<N)?0:(i-N+1);
+         for(int j=z;j<=i-z;j++){
+             a[j][i-j];
+         }
+     }
+
+.......2.1.....
+  Input: 4
+  Output: 7 4 2 1
+          
+11 8 5 3
+          
+14 12 9 6
+          
+16 15 13 10
+ N:B:                              
+(2,0)
+(1,0),(2,1)
+(0,0),(1,1),(2,2)
+(0,1),(1,2)
+(0,2)
+line i (counting from zero) consists of (x,y) such that y−x=i−(N-1)
+y=j;x=y-i+N-1;
+
+for(int i=0;i<2*N-1;i++){
+         int z=(i<N)?0:(i-N+1);
+         for(int j=z;j<=i-z;j++){
+             a[j][j-i+N-1]=p++;
+         }
+     }
+
+.....2.2.....
+  Input : 4
+  Output:  7 11 14 16
+           
+4 8 12 15
+           
+2 5 9 13
+           
+1 3 6 10 
+  for(int i=0;i<2*N-1;i++){
+         int z=(i<N)?0:(i-N+1);
+         for(int j=z;j<=i-z;j++){
+             a[j-i+N-1][j]=p++;
+         }
+     }
+       
+.....3.......
+Input :
+        10    24   32   
+        50    6    17   
+        99    10   11  
+         
+Output :
+        10 24 32 17 6 50 99 10 11
+
+
+.....4.......
+Input :
+        10    24   32   
+        50    6    17   
+        99    10   11  
+         
+Output :
+        32 24 10 50 6 17 11 10 99
+
+.....5.......
+Input :
+        10    24   32   
+        50    6    17   
+        99    10   11  
+         
+Output :
+        10 50 99 10 6 24 32 17 11
+
+.....6.......
+Input :
+        10    24   32   
+        50    6    17   
+        99    10   11  
+         
+Output :
+        11 17 32 24 6 10 99 50 10
+
+
+
+
+Input: 1 2 3 4 5
+       6 7 8 9 10 
+       11 12 13 14 15
+       16 17 18 19 20
+
+Output: 1 2 3 4 5 10 9 8 7 6 11 12 13 14 15
+void printZigZag(int row, int col, int a[][5]) 
+    { 
+        int evenRow = 0;
+        int oddRow = 1; 
+  
+        while (evenRow<row)  
+        { 
+            for (int i=0;i<col;i++) 
+            {  
+                cout<<a[evenRow][i] << " ";  
+            } 
+            evenRow = evenRow + 2;  
+              
+            if(oddRow < row) 
+            { 
+                for (int i=col-1; i>=0; i--) 
+                {  
+                cout<<a[oddRow][i] << " ";  
+                } 
+            } 
+            oddRow = oddRow + 2;  
+        }  
+    }
+
+</p>
+</html>
