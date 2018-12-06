@@ -1,2 +1,2 @@
 # First_Repository
-Programming Problem Solving List
+Programming Problem
